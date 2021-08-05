@@ -24,20 +24,46 @@ a {
 nav {
   width: 300px;
   height: 100vh;
-  padding: 20px 0;
   position: fixed;
   text-align: center;
   background: var(--gray-color);
+}
+
+#logo-container {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8vh 0;
 }
 
 #logo {
   font-family: "Dancing Script", cursive;
   font-weight: bold;
   color: var(--light-color);
-  font-size: 30px;
+  font-size: 4vh;
   transition: font-size 0.2s ease;
 }
 
 #logo:hover {
-  font-size: 32px;
+  font-size: 4.6vh;
+}
+
+#nav-list li a {
+  display: block;
+  padding: 2.5vh 20px;
+  font-size: 2vh;
+  font-weight: 900;
+  border-top: 0.4vh solid var(--dark-color);
+  transition: background 0.6s ease;
+}
+
+#nav-list li:last-child a {
+  border-bottom: 0.4vh solid var(--dark-color);
+}
+
+#nav-list li a:hover {
+  background: var(--light-color);
+  color: var(--dark-color);
 }
