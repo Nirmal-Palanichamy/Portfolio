@@ -46,12 +46,37 @@ nav {
   font-weight: bold;
   color: var(--light-color);
   font-size: 4vh;
-  transition: font-size 0.2s ease;
 }
 
-#logo:hover {
-  font-size: 4.6vh;
-  color: #fff;
+#logo .animate-text {
+  opacity: 0;
+  position: relative;
+  top: -11vh;
+  transition: opacity 0.5s ease-in, top 0.5s ease-in;
+}
+
+#letter-n {
+  position: relative;
+  left: 90px;
+  transition: left 1s ease 0.3s;
+}
+
+#letter-p {
+  position: relative;
+  left: 30px;
+  transition: left 1s ease 0.3s;
+}
+
+#logo:hover #letter-n,
+#logo:hover #letter-p {
+  left: 0;
+  transition: left 1s ease;
+}
+
+#logo:hover .animate-text {
+  opacity: 1;
+  top: 0;
+  transition: opacity 2s ease 0.2s, top 1s ease 0.2s;
 }
 
 #nav-list li a {
