@@ -131,6 +131,7 @@ main {
 #home {
   height: 100vh;
   font-family: "Bebas Neue", cursive;
+  color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,7 +146,7 @@ main {
   width: 200vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  animation: rotor 30s infinite forwards alternate ease-in-out;
+  animation: rotor 30s infinite forwards alternate ease-in-out 1s;
 }
 
 @keyframes rotor {
@@ -168,9 +169,24 @@ main {
   box-shadow: 0 0 10px #000;
 }
 
-#home h1 {
-  font-size: 6vw;
-  color: var(--secondary-color);
-  cursor: default;
+#rotor:active .primary-rotor {
+  background: var(--tertiary-color);
+}
+
+#rotor:active .tertiary-rotor {
+  background: var(--primary-color);
+}
+
+#home-content {
   position: absolute;
+  cursor: default;
+  text-align: center;
+}
+
+#home-content h1 {
+  font-size: 6vw;
+}
+
+#home p {
+  font-size: 3vw;
 }
