@@ -1,7 +1,7 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #000;
-  --tertiary-color: #ddd;
+  --tertiary-color: #44e4e4;
 }
 
 * {
@@ -57,7 +57,7 @@ nav {
 
 #letter-n {
   position: relative;
-  left: 12vh;
+  left: 12.5vh;
   transition: left 1s ease 0.3s;
 }
 
