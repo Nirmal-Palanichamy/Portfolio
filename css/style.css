@@ -2,6 +2,7 @@
   --primary-color: #fff;
   --secondary-color: #000;
   --tertiary-color: #44e4e4;
+  --card-color: #eee;
 }
 
 * {
@@ -24,8 +25,9 @@ a {
 /* NAVBAR SECTION */
 
 nav {
-  width: 300px;
+  width: 18.75rem;
   height: 100vh;
+  overflow: hidden;
   position: fixed;
   text-align: center;
   background: var(--primary-color);
@@ -35,35 +37,34 @@ nav {
 
 #logo-container {
   width: 100%;
-  height: 5vh;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8vh 0;
+  padding: 3.6rem 0;
 }
 
 #logo {
   font-family: "Dancing Script", cursive;
   font-weight: bold;
   color: var(--secondary-color);
-  font-size: 4vh;
+  font-size: 1.8rem;
 }
 
 #logo .animate-text {
   opacity: 0;
-  position: relative;
   transition: opacity 0.5s ease-in;
 }
 
 #letter-n {
   position: relative;
-  left: 12.5vh;
+  left: 5.6rem;
   transition: left 1s ease 0.3s;
 }
 
 #letter-p {
   position: relative;
-  left: 4vh;
+  left: 1.8rem;
   transition: left 1s ease 0.3s;
 }
 
@@ -80,15 +81,16 @@ nav {
 
 #nav-list li a {
   display: block;
-  padding: 2.5vh 20px;
-  font-size: 2vh;
-  font-weight: 900;
-  border-top: 0.4vh solid var(--tertiary-color);
+  color: var(--secondary-color);
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-top: 3px solid var(--tertiary-color);
   transition: background 0.6s ease;
 }
 
 #nav-list li:last-child a {
-  border-bottom: 0.4vh solid var(--tertiary-color);
+  border-bottom: 3px solid var(--tertiary-color);
 }
 
 #nav-list li a:hover {
@@ -97,22 +99,22 @@ nav {
 }
 
 #social {
-  padding: 6vh 0;
+  padding: 3rem 0;
 }
 
 #social .fab {
   margin: 0 0.5rem;
-  border: 0.3vh var(--secondary-color) solid;
+  border: 2px var(--secondary-color) solid;
   color: var(--secondary-color);
   box-sizing: content-box;
   border-radius: 50%;
-  height: 3vh;
-  width: 3vh;
-  line-height: 3vh;
+  height: 1.4rem;
+  width: 1.4rem;
+  line-height: 1.4rem;
   text-align: center;
-  padding: 1vh;
+  padding: 0.4rem;
   cursor: pointer;
-  font-size: 3vh;
+  font-size: 1.4rem;
   transition: background 1s ease;
 }
 
@@ -124,13 +126,14 @@ nav {
 /* MAIN SECTION */
 
 main {
-  padding-left: 300px;
+  padding-left: 18.75rem;
+  font-family: "Bebas Neue", cursive;
+  cursor: default;
 }
 
-/* MAIN_HOME SECTION */
+/* MAIN -> HOME SECTION */
 #home {
   height: 100vh;
-  font-family: "Bebas Neue", cursive;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -141,22 +144,23 @@ main {
 
 #rotor {
   position: relative;
-  left: 30vw;
-  top: 10vw;
-  width: 200vw;
+  left: 50%;
+  top: 50%;
+  width: 1200vw;
+  height: 1200vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  animation: rotor 30s infinite forwards alternate ease-in-out 1s;
+  animation: rotor-animation 30s infinite forwards alternate ease-in-out 1s;
 }
 
-@keyframes rotor {
+@keyframes rotor-animation {
   to {
     transform: rotate(360deg);
   }
 }
 
 #rotor div {
-  height: 200vw;
+  height: 600vw;
 }
 
 #rotor .primary-rotor {
@@ -169,24 +173,134 @@ main {
   box-shadow: 0 0 10px #000;
 }
 
-#rotor:active .primary-rotor {
-  background: var(--tertiary-color);
-}
-
-#rotor:active .tertiary-rotor {
-  background: var(--primary-color);
-}
-
 #home-content {
   position: absolute;
-  cursor: default;
   text-align: center;
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #home-content h1 {
-  font-size: 6vw;
+  font-size: 5.8rem;
 }
 
 #home p {
-  font-size: 3vw;
+  font-size: 2.8rem;
+}
+
+/* MAIN -> ABOUT SECTION */
+
+#about {
+  min-height: 100vh;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#about-content {
+  width: 100%;
+}
+
+#about-info {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* MAIN -> EDUCATION SECTION */
+#education {
+  min-height: 100vh;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#education-content {
+  width: 100%;
+}
+
+#education-info {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  nav {
+    display: none;
+  }
+  main {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #home-content h1 {
+    font-size: 4.8rem;
+  }
+
+  #home p {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #home-content h1 {
+    font-size: 3.1rem;
+  }
+
+  #home p {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  #home p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #home-content h1 {
+    font-size: 2rem;
+  }
+
+  #home p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  #home-content h1 {
+    font-size: 1.7rem;
+  }
+
+  #home p {
+    font-size: 0.8rem;
+  }
 }

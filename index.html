@@ -14,17 +14,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Josefin+Sans&family=Open+Sans&family=Oswald&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Roboto&family=Titillium+Web&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <title>Nirmal Palanichamy</title>
   </head>
   <body>
     <nav>
       <div id="logo-container">
-        <a href="#home"
+        <a href="#home" class="scroll"
           ><div id="logo">
             <span id="letter-n">N</span><span class="animate-text">irmal </span
             ><span id="letter-p">P</span
@@ -33,12 +34,12 @@
         >
       </div>
       <ul id="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#home" class="scroll">Home</a></li>
+        <li><a href="#about" class="scroll">About</a></li>
+        <li><a href="#education" class="scroll">Education</a></li>
+        <li><a href="#skills" class="scroll">Skills</a></li>
+        <li><a href="#contact" class="scroll">Contact</a></li>
+        <li><a href="#resume" class="scroll">Resume</a></li>
       </ul>
       <div id="social">
         <a
@@ -64,17 +65,123 @@
     <main>
       <section id="home">
         <div id="rotor">
-          <div class="primary-rotor"></div>
-          <div class="tertiary-rotor"></div>
           <div class="tertiary-rotor"></div>
           <div class="primary-rotor"></div>
+          <div class="primary-rotor"></div>
+          <div class="tertiary-rotor"></div>
         </div>
         <div id="home-content">
           <h1>Hey! I'm Nirmal Palanichamy.</h1>
           <p>I'm on my way to become a full stack developer.</p>
+          <a href="#about" class="btn scroll"
+            >About Me &nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
+          </a>
         </div>
       </section>
-      <section id="about"></section>
+      <section id="about">
+        <div id="about-content">
+          <div class="heading">
+            <h1>About</h1>
+            <div class="underline"></div>
+          </div>
+          <div id="about-info">
+            <div class="card">
+              <h1>
+                I'm a Mechanical Engineering student, but I strive to become a
+                Full Stack Developer.
+              </h1>
+            </div>
+            <div class="card">
+              <h1>How it started</h1>
+              <p>
+                I realized my area of interest was completely different to what
+                I was studying after two years at my college. I took a course on
+                JavaScript and it hit me hard that I had been traveling the
+                wrong path all along. But hey, better late than never!
+              </p>
+            </div>
+            <div class="card">
+              <h1>How it's going</h1>
+              <p>
+                Since then I've started to work towards my new goal - to become
+                a Full Stack Developer. I've been learning and practicing
+                various languages - Java, JavaScript, HTML/CSS, Python. In a
+                nutshell, I've been fascinated by what one can build as a Full
+                Stack Developer & it's just oddly satisfying. Moving forward,
+                I'm planning to dive deeper and learn JavaScript frameworks such
+                as React, Angular, Vue, etc. & for Backend - Ruby and Node.
+              </p>
+            </div>
+            <div class="card">
+              <h1>My approach & my aim</h1>
+              <p>
+                I'm constantly looking to improve wherever possible to become
+                the best at what I do. Ultimately, I'm determined to build and
+                work towards something that makes a huge impact on this world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="education">
+        <div id="education-content">
+          <div class="heading">
+            <h1>Education</h1>
+            <div class="underline"></div>
+          </div>
+          <div id="education-info">
+            <div class="card">
+              <h1>How it started</h1>
+              <p>
+                I realized my area of interest was completely different to what
+                I was studying after two years at my college. I took a course on
+                JavaScript and it hit me hard that I had been traveling the
+                wrong path all along. But hey, better late than never!
+              </p>
+            </div>
+            <div class="card">
+              <h1>How it's going</h1>
+              <p>
+                Since then I've started to work towards my new goal, to become a
+                Full Stack Developer. I've been learning and practicing various
+                languages - Java, JavaScript, HTML/CSS, Python. In a nutshell,
+                I've been fascinated by what one can build as a Full Stack
+                Developer & it's just oddly satisfying. Moving forward, I'm
+                planning to dive deeper and learn JavaScript frameworks such as
+                React, Angular, Vue, etc. & for Backend - Ruby and Node.
+              </p>
+            </div>
+            <div class="card">
+              <h1>My approach & my aim</h1>
+              <p>
+                I'm constantly looking to improve wherever possible to become
+                the best at what I do. Ultimately, I'm determined to build and
+                work towards something that makes a huge impact on this world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <!-- smooth scrolling -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".scroll").on("click", function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          const hash = this.hash;
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800
+          );
+        }
+      });
+    </script>
   </body>
 </html>
