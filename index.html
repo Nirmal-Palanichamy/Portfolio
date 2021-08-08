@@ -38,8 +38,8 @@
         <li><a href="#about" class="scroll">About</a></li>
         <li><a href="#education" class="scroll">Education</a></li>
         <li><a href="#skills" class="scroll">Skills</a></li>
-        <li><a href="#contact" class="scroll">Contact</a></li>
         <li><a href="#resume" class="scroll">Resume</a></li>
+        <li><a href="#contact" class="scroll">Contact</a></li>
       </ul>
       <div id="social">
         <a
@@ -105,7 +105,7 @@
             <div class="card">
               <h1>How it's going</h1>
               <p>
-                Since then I've started to work towards my new goal - to become
+                Since then, I've started to work towards my new goal - to become
                 a Full Stack Developer. I've been learning and practicing
                 various languages - Java, JavaScript, HTML/CSS, Python. In a
                 nutshell, I've been fascinated by what one can build as a Full
@@ -204,15 +204,6 @@
           </div>
         </div>
       </section>
-      <section id="contact">
-        <div id="contact-content">
-          <div class="heading">
-            <h1>Contact</h1>
-            <div class="underline"></div>
-          </div>
-          <div id="contact-info"></div>
-        </div>
-      </section>
       <section id="resume">
         <div id="resume-content">
           <div class="heading">
@@ -237,6 +228,42 @@
             <a href="./files/Resume.pdf" class="btn" download
               >Download Resume (PDF)</a
             >
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div id="contact-content">
+          <div class="heading">
+            <h1>Contact</h1>
+            <div class="underline"></div>
+          </div>
+          <div id="contact-info">
+            <form
+              action="http://formspree.io/nirmal.palanichamy@gmail.com"
+              method="POST"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                id="name"
+                required
+              />
+              <input
+                type="email"
+                name="_replyto"
+                placeholder="Email"
+                id="email"
+                required
+              />
+              <textarea
+                name="body"
+                placeholder="Message"
+                id="message"
+                required
+              ></textarea>
+              <input type="submit" value="Send" id="submit" />
+            </form>
           </div>
         </div>
       </section>

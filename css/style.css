@@ -232,7 +232,7 @@ main {
 /* MAIN -> EDUCATION SECTION */
 
 #education {
-  min-height: var(--info-height);
+  min-height: 100vh;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -246,7 +246,7 @@ main {
 }
 
 #education-info {
-  min-height: calc(100vh - 8.6rem);
+  min-height: var(--info-height);
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -267,7 +267,7 @@ main {
 /* MAIN -> SKILLS SECTION */
 
 #skills {
-  min-height: var(--info-height);
+  min-height: 100vh;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -281,7 +281,7 @@ main {
 }
 
 #skills-info {
-  min-height: calc(100vh - 8.6rem);
+  min-height: var(--info-height);
   padding: 10px 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -294,32 +294,6 @@ main {
   border: 3px solid var(--tertiary-color);
   outline: 3px solid var(--secondary-color);
   box-shadow: 0 0 10px #000;
-}
-
-/* MAIN -> CONTACT SECTION */
-
-#contact {
-  min-height: var(--info-height);
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-#contact-content {
-  min-height: 100vh;
-  width: 100%;
-}
-
-#contact-info {
-  min-height: calc(100vh - 8.6rem);
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Titillium Web", sans-serif;
 }
 
 /* MAIN -> RESUME SECTION */
@@ -340,7 +314,7 @@ main {
 
 #resume-info {
   min-height: calc(100vh - 8.6rem);
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,6 +324,82 @@ main {
 
 #resume-info .btn:first-child {
   margin-top: 0;
+}
+
+/* MAIN -> CONTACT SECTION */
+
+#contact {
+  min-height: 100vh;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#contact-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#contact-info {
+  min-height: var(--info-height);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#contact-info form {
+  display: flex;
+  flex-direction: column;
+  width: min(30rem, 100%);
+}
+
+#contact-info form > * {
+  margin: 0.3rem 0;
+}
+
+#name,
+#email,
+#message {
+  padding: 0.5rem;
+  width: 100%;
+  border: 2px solid var(--secondary-color);
+  outline: none;
+  font-family: cursive;
+  transition: border 0.3s ease;
+}
+
+#name:focus,
+#email:focus,
+#message:focus {
+  border: 2px solid var(--tertiary-color);
+}
+
+#message {
+  height: 7rem;
+}
+
+#submit {
+  cursor: pointer;
+  width: 30%;
+  align-self: flex-end;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.4rem;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  height: 3rem;
+}
+
+#submit:hover {
+  color: var(--tertiary-color);
 }
 
 /* MEDIA QUERIES */
@@ -383,9 +433,9 @@ main {
   }
 
   .btn {
-    padding: 0.5rem 1rem;
-    margin-top: 1.5rem;
-    font-size: 0.75rem;
+    padding: 0.8rem 1.6rem;
+    margin-top: 2.2rem;
+    font-size: 1.2rem;
   }
 
   #skills-info {
@@ -401,6 +451,12 @@ main {
   #home p {
     font-size: 1.2rem;
   }
+
+  .btn {
+    padding: 0.7rem 1.4rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 412px) {
@@ -414,6 +470,12 @@ main {
 
   #skills-info {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    margin-top: 1.8rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -433,9 +495,13 @@ main {
   }
 
   .btn {
-    padding: 1rem 2rem;
-    margin-top: 3rem;
-    font-size: 1.5rem;
+    padding: 1.3rem 2.6rem;
+    margin-top: 3.2rem;
+    font-size: 1.6rem;
+  }
+
+  #contact-info form > * {
+    margin: 1rem 0;
   }
 }
 
@@ -444,6 +510,13 @@ main {
     padding: 4rem;
     margin: 2rem;
   }
+
+  .btn {
+    padding: 1.6rem 3.2rem;
+    margin-top: 4rem;
+    font-size: 2rem;
+  }
+
   #education-info .card {
     width: min(50rem, 100%);
   }
