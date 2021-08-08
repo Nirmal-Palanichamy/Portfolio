@@ -47,10 +47,15 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: var(--card-color);
+  background: var(--primary-color);
   margin: 0.8rem;
   text-align: center;
-  border: 2px solid #ccc;
+}
+
+.separator {
+  width: 5rem;
+  height: 0;
+  border-top: 5px dotted var(--tertiary-color);
 }
 
 .card p {
@@ -62,4 +67,5 @@
 
 .date {
   text-transform: uppercase;
+  margin-top: 1rem;
 }
