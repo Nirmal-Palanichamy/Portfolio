@@ -3,6 +3,7 @@
   --secondary-color: #000;
   --tertiary-color: #44e4e4;
   --card-color: #eee;
+  --info-height: calc(100vh - 8.6rem);
 }
 
 * {
@@ -132,6 +133,7 @@ main {
 }
 
 /* MAIN -> HOME SECTION */
+
 #home {
   height: 100vh;
   color: var(--secondary-color);
@@ -205,20 +207,28 @@ main {
 }
 
 #about-content {
+  min-height: 100vh;
   width: 100%;
 }
 
 #about-info {
+  min-height: var(--info-height);
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-family: "Titillium Web", sans-serif;
 }
 
+#about-info .card {
+  width: 100%;
+}
+
 /* MAIN -> EDUCATION SECTION */
+
 #education {
-  min-height: 100vh;
+  min-height: var(--info-height);
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -227,13 +237,51 @@ main {
 }
 
 #education-content {
+  min-height: 100vh;
   width: 100%;
 }
 
 #education-info {
+  min-height: calc(100vh - 8.6rem);
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#education-info .card {
+  width: min(20rem, 100%);
+}
+
+#education-info .card li {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* MAIN -> SKILLS SECTION */
+
+#skills {
+  min-height: var(--info-height);
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#skills-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#skills-info {
+  min-height: calc(100vh - 8.6rem);
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   align-items: center;
   font-family: "Titillium Web", sans-serif;
 }
@@ -302,5 +350,31 @@ main {
 
   #home p {
     font-size: 0.8rem;
+  }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+@media (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  .card {
+    padding: 4rem;
+    margin: 2rem;
+  }
+  #education-info .card {
+    width: min(50rem, 100%);
+  }
+}
+
+@media (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+  .card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  #education-info .card {
+    width: min(50rem, 100%);
   }
 }

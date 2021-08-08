@@ -50,7 +50,7 @@
   background: var(--card-color);
   margin: 0.8rem;
   text-align: center;
-  box-shadow: 0 0 2px #000;
+  border: 2px solid #ccc;
 }
 
 .card p {
@@ -58,4 +58,8 @@
   font-weight: bold;
   line-height: 1.4;
   font-size: 1rem;
+}
+
+.date {
+  text-transform: uppercase;
 }
