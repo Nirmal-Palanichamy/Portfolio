@@ -369,7 +369,7 @@ main {
   width: 100%;
   border: 2px solid var(--secondary-color);
   outline: none;
-  font-family: cursive;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transition: border 0.3s ease;
 }
 
