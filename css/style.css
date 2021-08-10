@@ -278,6 +278,11 @@ main {
   padding: 100px 20px;
 }
 
+#contact-info h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
 #contact-info form {
   width: min(30rem, 100%);
   display: flex;
@@ -389,6 +394,11 @@ main {
 
   #skills-info {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  #contact-info h1 {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
   }
 }
 
