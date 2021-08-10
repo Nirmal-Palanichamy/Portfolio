@@ -2,8 +2,24 @@
   --primary-color: #fff;
   --secondary-color: #000;
   --tertiary-color: #44e4e4;
-  --card-color: #eee;
-  --info-height: calc(100vh - 8.6rem);
+  --shadow-color: #000;
+  --navbar-width: 18.75rem;
+  --logo-container-and-heading-height: 5rem;
+  --logo-container-padding: 3.6rem;
+  --info-min-height: calc(
+    100vh - var(--logo-container-and-heading-height) -
+      var(--logo-container-padding)
+  );
+  --social-size: 1.4rem;
+  --font-roboto: "Roboto", sans-serif;
+  --font-dancing-script: "Dancing Script", cursive;
+  --font-bebas-neue: "Bebas Neue", cursive;
+  --font-titillium-Web: "Titillium Web", sans-serif;
+  --font-franklin-gothic-medium: "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  --factor-home: 1;
+  --factor-home-btn: 1;
+  --factor-resume: 1;
 }
 
 * {
@@ -14,46 +30,38 @@
   list-style: none;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: var(--secondary-color);
-}
-
-a {
-  color: var(--secondary-color);
+img {
+  width: 4.375rem;
 }
 
 /* NAVBAR SECTION */
 
 nav {
-  width: 18.75rem;
+  background: var(--primary-color);
+  width: var(--navbar-width);
   height: 100vh;
+  font-family: var(--font-roboto);
   overflow: hidden;
   position: fixed;
   text-align: center;
-  background: var(--primary-color);
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px var(--shadow-color);
   z-index: 1;
-}
-
-img {
-  width: 70px;
 }
 
 #logo-container {
   width: 100%;
-  height: 5rem;
+  height: var(--logo-container-and-heading-height);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3.6rem 0;
+  padding: var(--logo-container-padding) 0;
 }
 
 #logo {
-  font-family: "Dancing Script", cursive;
-  font-weight: bold;
   color: var(--secondary-color);
+  font-family: var(--font-dancing-script);
   font-size: 1.8rem;
+  font-weight: bold;
 }
 
 #logo .animate-text {
@@ -85,11 +93,11 @@ img {
 }
 
 #nav-list li a {
-  display: block;
   color: var(--secondary-color);
-  padding: 1rem 0;
   font-size: 0.9rem;
   font-weight: bold;
+  display: block;
+  padding: 1rem 0;
   border-top: 3px solid var(--tertiary-color);
   transition: background 0.6s ease;
 }
@@ -99,8 +107,8 @@ img {
 }
 
 #nav-list li a:hover {
-  background: var(--secondary-color);
   color: var(--tertiary-color);
+  background: var(--secondary-color);
 }
 
 #social {
@@ -108,52 +116,52 @@ img {
 }
 
 #social .fab {
-  margin: 0 0.5rem;
-  border: 2px var(--secondary-color) solid;
   color: var(--secondary-color);
-  box-sizing: content-box;
+  width: var(--social-size);
+  height: var(--social-size);
+  font-size: var(--social-size);
+  line-height: var(--social-size);
+  border: 2px var(--secondary-color) solid;
   border-radius: 50%;
-  height: 1.4rem;
-  width: 1.4rem;
-  line-height: 1.4rem;
-  text-align: center;
+  margin: 0 0.5rem;
   padding: 0.4rem;
+  box-sizing: content-box;
+  text-align: center;
   cursor: pointer;
-  font-size: 1.4rem;
   transition: background 1s ease;
 }
 
 #social .fab:hover {
-  background: var(--secondary-color);
   color: var(--tertiary-color);
+  background: var(--secondary-color);
 }
 
 /* MAIN SECTION */
 
 main {
-  padding-left: 18.75rem;
-  font-family: "Bebas Neue", cursive;
+  padding-left: var(--navbar-width);
+  font-family: var(--font-bebas-neue);
   cursor: default;
 }
 
-/* MAIN -> HOME SECTION */
+/* 1. HOME SECTION*/
 
 #home {
-  height: 100vh;
   color: var(--secondary-color);
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 #rotor {
+  width: 1200vw;
+  height: 1200vw;
   position: relative;
   left: 50%;
   top: 50%;
-  width: 1200vw;
-  height: 1200vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   animation: rotor-animation 30s infinite forwards alternate ease-in-out 1s;
@@ -176,83 +184,50 @@ main {
 #rotor .tertiary-rotor {
   background: var(--tertiary-color);
   z-index: 0;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
 #home-content {
+  max-width: 100%;
+  height: 100vh;
   position: absolute;
   text-align: center;
-  height: 100vh;
-  max-width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 #home-content h1 {
-  font-size: 5.8rem;
+  font-size: calc(5.8rem / var(--factor-home));
 }
 
-#home p {
-  font-size: 2.8rem;
+#home-content p {
+  font-size: calc(2.8rem / var(--factor-home));
 }
 
-/* MAIN -> ABOUT SECTION */
-
-#about {
-  min-height: 100vh;
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+#home-content .btn {
+  font-size: calc(1.5rem / var(--factor-home-btn));
+  padding: calc(1rem / var(--factor-home-btn))
+    calc(2rem / var(--factor-home-btn));
+  margin-top: calc(3rem / var(--factor-home-btn));
 }
 
-#about-content {
-  min-height: 100vh;
-  width: 100%;
-}
+/* 2. ABOUT SECTION */
 
 #about-info {
-  min-height: var(--info-height);
   padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Titillium Web", sans-serif;
 }
 
 #about-info .card {
   width: 100%;
 }
 
-/* MAIN -> EDUCATION SECTION */
-
-#education {
-  min-height: 100vh;
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-#education-content {
-  min-height: 100vh;
-  width: 100%;
-}
+/* 3. EDUCATION SECTION */
 
 #education-info {
-  min-height: var(--info-height);
   padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Titillium Web", sans-serif;
 }
 
 #education-info .card {
@@ -260,102 +235,53 @@ main {
 }
 
 #education-info .card li {
-  font-weight: bold;
   font-size: 1rem;
+  font-weight: bold;
 }
 
-/* MAIN -> SKILLS SECTION */
-
-#skills {
-  min-height: 100vh;
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-#skills-content {
-  min-height: 100vh;
-  width: 100%;
-}
+/* 4. SKILLS SECTION */
 
 #skills-info {
-  min-height: var(--info-height);
+  min-height: var(--info-min-height);
+  font-family: var(--font-titillium-Web);
   padding: 10px 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  font-family: "Titillium Web", sans-serif;
 }
 
 #skills-info .card {
   border: 3px solid var(--tertiary-color);
   outline: 3px solid var(--secondary-color);
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
-/* MAIN -> RESUME SECTION */
-
-#resume {
-  min-height: var(--info-height);
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-#resume-content {
-  min-height: 100vh;
-  width: 100%;
-}
+/* 5. RESUME SECTION */
 
 #resume-info {
-  min-height: calc(100vh - 8.6rem);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Titillium Web", sans-serif;
+  padding: 100px 20px;
 }
 
 #resume-info .btn:first-child {
   margin-top: 0;
 }
 
-/* MAIN -> CONTACT SECTION */
-
-#contact {
-  min-height: 100vh;
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+#resume .btn {
+  font-size: calc(1.5rem / var(--factor-resume));
+  padding: calc(1rem / var(--factor-resume)) calc(2rem / var(--factor-resume));
+  margin-top: calc(3rem / var(--factor-resume));
 }
-
-#contact-content {
-  min-height: 100vh;
-  width: 100%;
-}
+/* 6. CONTACT SECTION */
 
 #contact-info {
-  min-height: var(--info-height);
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Titillium Web", sans-serif;
+  padding: 100px 20px;
 }
 
 #contact-info form {
+  width: min(30rem, 100%);
   display: flex;
   flex-direction: column;
-  width: min(30rem, 100%);
 }
 
 #contact-info form > * {
@@ -365,11 +291,10 @@ main {
 #name,
 #email,
 #message {
-  padding: 0.5rem;
-  width: 100%;
+  font-family: var(--font-franklin-gothic-medium);
   border: 2px solid var(--secondary-color);
+  padding: 0.5rem;
   outline: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transition: border 0.3s ease;
 }
 
@@ -384,18 +309,18 @@ main {
 }
 
 #submit {
-  cursor: pointer;
-  width: 30%;
-  align-self: flex-end;
-  background: var(--secondary-color);
   color: var(--primary-color);
-  border: none;
-  padding: 0.4rem;
-  font-family: "Bebas Neue", cursive;
+  background: var(--secondary-color);
+  width: 30%;
+  height: 3rem;
+  font-family: var(--font-bebas-neue);
   font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 0.4rem;
   letter-spacing: 1px;
   transition: color 0.3s ease;
-  height: 3rem;
 }
 
 #submit:hover {
@@ -405,37 +330,43 @@ main {
 /* MEDIA QUERIES */
 
 @media (max-width: 1200px) {
+  :root {
+    --info-min-height: none;
+    --factor-home: 1.05;
+    --factor-home-btn: 1.05;
+    --factor-resume: 1.4;
+  }
+
   nav {
     display: none;
   }
+
   main {
     padding-left: 0;
+  }
+
+  .content {
+    min-height: 0;
+  }
+
+  #about-info,
+  #education-info,
+  #skills-info {
+    padding: 50px 20px;
   }
 }
 
 @media (max-width: 900px) {
-  #home-content h1 {
-    font-size: 4.8rem;
-  }
-
-  #home p {
-    font-size: 2.3rem;
+  :root {
+    --factor-home: 1.25;
+    --factor-home-btn: 1.25;
   }
 }
 
 @media (max-width: 768px) {
-  #home-content h1 {
-    font-size: 3.1rem;
-  }
-
-  #home p {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    padding: 0.8rem 1.6rem;
-    margin-top: 2.2rem;
-    font-size: 1.2rem;
+  :root {
+    --factor-home: 1.9;
+    --factor-home-btn: 1.5;
   }
 
   #skills-info {
@@ -444,90 +375,53 @@ main {
 }
 
 @media (max-width: 500px) {
-  #home-content h1 {
-    font-size: 2.5rem;
-  }
-
-  #home p {
-    font-size: 1.2rem;
-  }
-
-  .btn {
-    padding: 0.7rem 1.4rem;
-    margin-top: 2rem;
-    font-size: 1rem;
+  :root {
+    --factor-home: 2.2;
+    --factor-resume: 1.8;
   }
 }
 
 @media (max-width: 412px) {
-  #home-content h1 {
-    font-size: 2rem;
-  }
-
-  #home p {
-    font-size: 0.9rem;
+  :root {
+    --factor-home: 2.85;
+    --factor-home-btn: 1.8;
   }
 
   #skills-info {
     grid-template-columns: repeat(1, 1fr);
   }
-
-  .btn {
-    padding: 0.5rem 1rem;
-    margin-top: 1.8rem;
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 320px) {
-  #home-content h1 {
-    font-size: 1.7rem;
-  }
-
-  #home p {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .card {
-    padding: 2rem;
-  }
-
-  .btn {
-    padding: 1.3rem 2.6rem;
-    margin-top: 3.2rem;
-    font-size: 1.6rem;
-  }
-
-  #contact-info form > * {
-    margin: 1rem 0;
-  }
-}
-
-@media (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
-  .card {
-    padding: 4rem;
-    margin: 2rem;
-  }
-
-  .btn {
-    padding: 1.6rem 3.2rem;
-    margin-top: 4rem;
-    font-size: 2rem;
-  }
-
-  #education-info .card {
-    width: min(50rem, 100%);
+  :root {
+    --factor-home: 3.5;
+    --factor-home-btn: 2.1;
   }
 }
 
 @media (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
-  .card {
-    padding: 2rem;
-    margin: 1rem;
+  :root {
+    --info-min-height: none;
+    --factor-home: 1.05;
+    --factor-home-btn: 1.05;
+    --factor-resume: 1.4;
   }
-  #education-info .card {
-    width: min(50rem, 100%);
+
+  nav {
+    display: none;
+  }
+
+  main {
+    padding-left: 0;
+  }
+
+  .content {
+    min-height: 0;
+  }
+
+  #about-info,
+  #education-info,
+  #skills-info {
+    padding: 50px 20px;
   }
 }
